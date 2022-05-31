@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -23,17 +24,18 @@ body {
     max-width: 45rem;
     background-color: hsl(27, 66%, 92%);
     padding: 7% 15%;
+    box-shadow: 2px 1px 20px 4px #dedcdd;
 }
 
 .balance {
     background-color: hsl(10, 79%, 65%);
     color: #fff;
     margin-bottom: 1rem;
-    height: 2rem;
+    height: 3.2rem;
 }
 
 .spending {
-    background-color: #fff;
+    background-color: #fffcf7;
 }
 
 .balance,
@@ -67,7 +69,7 @@ h2 {
 }
 
 .white_circle {
-    border: 1.8px solid #fff;
+    border: 2px solid #fff;
     box-sizing: border-box;
     position: absolute;
     right: 1.1rem;
@@ -85,7 +87,7 @@ h2 {
 }
 
 .cont_graph {
-    height: 11rem;
+    height: 12rem;
     flex-direction: column;
 }
 
@@ -116,7 +118,7 @@ h2 {
 }
 
 .graph {
-    margin: 0 0.05rem;
+    margin: 0 0.35rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -124,7 +126,7 @@ h2 {
 
 .amount {
     border-radius: 0.2rem;
-    width: 2rem;
+    width: 2.4rem;
 }
 
 .current_day {
@@ -178,6 +180,7 @@ h2 {
 
 .label {
     color: hsl(28, 10%, 53%);
+    margin-bottom: 0.5rem;
 }
 
 .cont_percent {
@@ -191,6 +194,13 @@ h2 {
 
 .total {
     font-size: 2.2rem;
+    line-height: 1;
+    color: hsl(25, 47%, 15%);
+}
+
+.percent {
+    color: hsl(25, 47%, 15%);
+    font-weight: 700;
 }
 
 
@@ -210,6 +220,18 @@ h2 {
 @media screen and (max-width:800px) {
     .main {
         max-width: 96vw;
-        padding: 10% 2%;
+        padding: 10% 16%;
+    }
+    .graph {
+        margin: 0 0.1px;
+    }
+    .amount {
+        width: 2.1rem;
+    }
+    .graph:nth-child(1) {
+        margin-left: 0;
+    }
+    .graph:last-child {
+        margin-right: 0;
     }
 }

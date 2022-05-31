@@ -4,7 +4,7 @@ $(document).ready(function() {
         for (n = 0; n < json.length; n++) {
             var day = (json[n].day);
             var amount = (json[n].amount);
-            var label_amount = '<div class="lab_amount lab_' + day + '">$' + amount + '</div>';
+            var label_amount = '<div class="lab_amount lab_' + day + '">' + amount + '</div>';
             var div_amount = '<div id="' + day + '" class="amount"></div>';
             $(".cont_graph").append('<div class="graph">' + label_amount + div_amount + '<div id="' + day + '"  class="cont_bar"><p class="label_day">' + day + '</p></div></div>');
             $("#" + day).css("height", (amount / 7) + "rem");
@@ -14,9 +14,14 @@ $(document).ready(function() {
                 $("#" + day).addClass("other_day");
             };
         };
+        onHover();
     });
-    $(".amount").hover(function(e) {
-        var selected = e.target.id;
-        $(".lab_" + selected).toggleClass("show");
-    });
+
+    function onHover() {
+        $(".amount").hover(function(e) {
+            var selected = e.target.id;
+            $(".lab_" + selected).toggleClass("show");
+        });
+    };
+    onHover();
 });
